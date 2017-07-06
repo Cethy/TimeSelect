@@ -4,7 +4,7 @@
     "description": "Provides a SelectType containing a selection of possible time values, from 00:00 to 23:45.",
     "type": "library",
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=5.6.17",
         "symfony/form": "^3.3",
         "symfony/options-resolver": "^3.3"
     },
