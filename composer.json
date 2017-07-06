@@ -1,0 +1,23 @@
+{
+    "name": "cethyworks/time-select",
+    "license": "MIT",
+    "description": "Provides a SelectType containing a selection of possible time values, from 00:00 to 23:45.",
+    "type": "library",
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/form": "^3.3",
+        "symfony/options-resolver": "^3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "authors": [
+        {
+            "name": "Charles-Elie",
+            "email": "charles-elie@cethyworks.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Cethyworks\\TimeSelect\\": "" }
+    }
+}
