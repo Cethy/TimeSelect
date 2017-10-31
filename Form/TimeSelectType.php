@@ -32,21 +32,32 @@ class TimeSelectType extends AbstractType
 
 
     /**
+     * @param int $startHour
+     * @param int $startMinute
      * @return array
      */
-    protected function generateChoices()
+    public static function generateChoices($startHour = 0, $startMinute = 0)
     {
         $hours   = range(0, 23);
         $minutes = range(0, 59, 15);
 
         $choices = [];
+        $tailChoices = [];
         foreach($hours as $hour) {
             foreach($minutes as $minute) {
                 $value = sprintf('%02d:%02d', $hour, $minute);
-                $choices[$value] = $value;
+
+                if(($hour == $startHour && $minute >= $startMinute) || $hour > $startHour) {
+                    $choices[$value] = $value;
+                }
+                else {
+                    $tailChoices[$value] = $value;
+                }
+
+
             }
         }
 
-        return $choices;
+        return array_merge($choices, $tailChoices);
     }
 }
