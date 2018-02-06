@@ -34,12 +34,14 @@ class TimeSelectType extends AbstractType
     /**
      * @param int $startHour
      * @param int $startMinute
+     * @param int $minuteStep
+     * @param int $hourStep
      * @return array
      */
-    public static function generateChoices($startHour = 0, $startMinute = 0)
+    public static function generateChoices($startHour = 0, $startMinute = 0, $minuteStep = 15, $hourStep = 1)
     {
-        $hours   = range(0, 23);
-        $minutes = range(0, 59, 15);
+        $hours   = range(0, 23, $hourStep);
+        $minutes = range(0, 59, $minuteStep);
 
         $choices = [];
         $tailChoices = [];
@@ -53,8 +55,6 @@ class TimeSelectType extends AbstractType
                 else {
                     $tailChoices[$value] = $value;
                 }
-
-
             }
         }
 
